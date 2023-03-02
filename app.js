@@ -25,13 +25,6 @@ Seattle
 6pm: 42 cookies
 7pm: 57 cookies
 Total: 875 cookies*/
-/*let hoursOfOperation1=["6am","7am","8am","9am","10am","11am","12pm","1pm","2pm","3pm","4pm","5pm","6pm","7pm"];
-let hoursArray = document.querySelector("output")
-let variable = document.createElement("li");
-for(let i = 0; i < hoursOfOperation1.length; i++){
-   // variable.innerHTML = `${hoursOfOperation1[i]}: ${cookiesPerCustomer[i]} cookies`;
-    hoursArray.append(variable);
-}*/
 
 function getRandom(min, max) { //generates a random number
 
@@ -43,17 +36,21 @@ const seattle = {
     min: 23, //minmum customer
     max: 65, //maximum customer
     average: 6.3, //average cookie per customer
-    hoursOfOperation4: ["6am", "7am", "8am", "9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm", "6pm", "7pm"],
+    hoursOfOperation4: ["6:00 am", "7:00 am", "8:00 am", "9:00 am", "10:00 am", "11:00 am", "12:00 pm", "1:00 pm", "2:00 pm", "3:00 pm", "4:00 pm", "5:00 pm", "6:00 pm", "7:00 pm"],
     customersPerHour: function () {
         return getRandom(this.max, this.min);
     },
     cookiesPerCustomer: [],
     getCookies: function () {
+        let totalCookiesSold = 0;
         for (let i = 0; i < this.hoursOfOperation4.length; i++) {
-            console.log(seattle.hoursOfOperation4[i], Math.ceil(this.average *this.customersPerHour()));
+            const cookiesSold = Math.ceil(this.average * this.customersPerHour());
+            console.log(seattle.hoursOfOperation4[i], Math.ceil(this.average * this.customersPerHour()));
             //console.log(Math.ceil(this.average *this.customersPerHour()));
-            this.cookiesPerCustomer.push(Math.ceil(this.average *this.customersPerHour())); //
+            this.cookiesPerCustomer.push(cookiesSold); //
+            totalCookiesSold += cookiesSold;
         }
+        this.totalCookies4 = totalCookiesSold;
         return this.cookiesPerCustomer;
 
 
@@ -62,11 +59,13 @@ const seattle = {
 }
 seattle.getCookies();
 let hoursOfOperation4 = document.querySelector(".seattleOutput");
+let totalCookies4 = document.querySelector(".totalCookies4");
 
-for(let i = 0; i < seattle.hoursOfOperation4.length; i++){
+for (let i = 0; i < seattle.hoursOfOperation4.length; i++) {
     let list = document.createElement("li");
-   list.innerHTML = `${seattle.hoursOfOperation4[i]}: ${seattle.cookiesPerCustomer[i]} cookies`;
+    list.innerHTML = `${seattle.hoursOfOperation4[i]}: ${seattle.cookiesPerCustomer[i]} cookies`;
     hoursOfOperation4.append(list);
+    totalCookies4.innerHTML = `Total: ${seattle.totalCookies4} cookies`;
 }
 
 //TOKYO
@@ -74,30 +73,33 @@ const tokyo = {
     min: 3, //minmum customer
     max: 24, //maximum customer
     average: 1.2, //average cookie per customer
-    hoursOfOperation3: ["6am", "7am", "8am", "9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm", "6pm", "7pm"],
+    hoursOfOperation3: ["6:00 am", "7:00 am", "8:00 am", "9:00 am", "10:00 am", "11:00 am", "12:00 pm", "1:00 pm", "2:00 pm", "3:00 pm", "4:00 pm", "5:00 pm", "6:00 pm", "7:00 pm"],
     customersPerHour: function () {
         return getRandom(this.max, this.min);
     },
     cookiesPerCustomer: [],
     getCookies: function () {
+        let totalCookiesSold = 0;
         for (let i = 0; i < this.hoursOfOperation3.length; i++) {
-            console.log(tokyo.hoursOfOperation3[i], Math.ceil(this.average *this.customersPerHour()));
-            //console.log(Math.ceil(this.average *this.customersPerHour()));
-            this.cookiesPerCustomer.push(Math.ceil(this.average *this.customersPerHour())); //
+            const cookiesSold = Math.ceil(this.average * this.customersPerHour());
+            console.log(tokyo.hoursOfOperation3[i], cookiesSold);
+            this.cookiesPerCustomer.push(cookiesSold); //
+            totalCookiesSold += cookiesSold
         }
+        this.totalCookies3 = totalCookiesSold;
         return this.cookiesPerCustomer;
-
-
     }
 
 }
 tokyo.getCookies();
 let hoursOfOperation3 = document.querySelector(".tokyoOutput");
+let totalCookies3 = document.querySelector(".totalCookies3");
 
-for(let i = 0; i < tokyo.hoursOfOperation3.length; i++){
+for (let i = 0; i < tokyo.hoursOfOperation3.length; i++) {
     let list = document.createElement("li");
-   list.innerHTML = `${tokyo.hoursOfOperation3[i]}: ${tokyo.cookiesPerCustomer[i]} cookies`;
+    list.innerHTML = `${tokyo.hoursOfOperation3[i]}: ${tokyo.cookiesPerCustomer[i]} cookies`;
     hoursOfOperation3.append(list);
+    totalCookies3.innerHTML = `Total: ${tokyo.totalCookies3} cookies`;
 }
 
 //DUBAI
@@ -105,17 +107,22 @@ const dubai = {
     min: 11, //minmum customer
     max: 38, //maximum customer
     average: 3.7, //average cookie per customer
-    hoursOfOperation2: ["6am", "7am", "8am", "9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm", "6pm", "7pm"],
+    hoursOfOperation2: ["6:00 am", "7:00 am", "8:00 am", "9:00 am", "10:00 am", "11:00 am", "12:00 pm", "1:00 pm", "2:00 pm", "3:00 pm", "4:00 pm", "5:00 pm", "6:00 pm", "7:00 pm"],
     customersPerHour: function () {
         return getRandom(this.max, this.min);
     },
     cookiesPerCustomer: [],
     getCookies: function () {
+        let totalCookiesSold = 0;
         for (let i = 0; i < this.hoursOfOperation2.length; i++) {
-            console.log(dubai.hoursOfOperation2[i], Math.ceil(this.average *this.customersPerHour()));
+            const cookiesSold = Math.ceil(this.average * this.customersPerHour());
+
+            console.log(dubai.hoursOfOperation2[i], cookiesSold);
             //console.log(Math.ceil(this.average *this.customersPerHour()));
-            this.cookiesPerCustomer.push(Math.ceil(this.average *this.customersPerHour())); //
+            this.cookiesPerCustomer.push(cookiesSold); 
+            totalCookiesSold += cookiesSold;
         }
+        this.totalCookies2 = totalCookiesSold;
         return this.cookiesPerCustomer;
 
 
@@ -124,11 +131,13 @@ const dubai = {
 }
 dubai.getCookies();
 let hoursOfOperation2 = document.querySelector(".dubaiOutput");
+let totalCookies2 = document.querySelector(".totalCookies2");
 
-for(let i = 0; i < dubai.hoursOfOperation2.length; i++){
+for (let i = 0; i < dubai.hoursOfOperation2.length; i++) {
     let list = document.createElement("li");
-   list.innerHTML = `${dubai.hoursOfOperation2[i]}: ${dubai.cookiesPerCustomer[i]} cookies`;
+    list.innerHTML = `${dubai.hoursOfOperation2[i]}: ${dubai.cookiesPerCustomer[i]} cookies`;
     hoursOfOperation2.append(list);
+    totalCookies2.innerHTML = `Total: ${dubai.totalCookies2} cookies`;
 }
 
 
@@ -139,30 +148,34 @@ const paris = {
     min: 20, //minmum customer
     max: 38, //maximum customer
     average: 2.3, //average cookie per customer
-    hoursOfOperation1: ["6am", "7am", "8am", "9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm", "6pm", "7pm"],
+    hoursOfOperation1: ["6:00 am", "7:00 am", "8:00 am", "9:00 am", "10:00 am", "11:00 am", "12:00 pm", "1:00 pm", "2:00 pm", "3:00 pm", "4:00 pm", "5:00 pm", "6:00 pm", "7:00 pm"],
     customersPerHour: function () {
         return getRandom(this.max, this.min);
     },
     cookiesPerCustomer: [],
     getCookies: function () {
+        let totalCookiesSold = 0;
         for (let i = 0; i < this.hoursOfOperation1.length; i++) {
-            console.log(paris.hoursOfOperation1[i], Math.ceil(this.average *this.customersPerHour()));
-            //console.log(Math.ceil(this.average *this.customersPerHour()));
-            this.cookiesPerCustomer.push(Math.ceil(this.average *this.customersPerHour())); //
+            const cookiesSold = Math.ceil(this.average * this.customersPerHour());
+            console.log(paris.hoursOfOperation1[i], cookiesSold);
+            this.cookiesPerCustomer.push(cookiesSold);
+            totalCookiesSold += cookiesSold;
         }
+        this.totalCookies1 = totalCookiesSold; //totalcookies1 refers to class in html
         return this.cookiesPerCustomer;
-
-
     }
-
 }
+
 paris.getCookies();
 let hoursOfOperation1 = document.querySelector(".parisOutput");
+let totalCookies1 = document.querySelector(".totalCookies1");
 
-for(let i = 0; i < paris.hoursOfOperation1.length; i++){
+
+for (let i = 0; i < paris.hoursOfOperation1.length; i++) {
     let list = document.createElement("li");
-   list.innerHTML = `${paris.hoursOfOperation1[i]}: ${paris.cookiesPerCustomer[i]} cookies`;
+    list.innerHTML = `${paris.hoursOfOperation1[i]}: ${paris.cookiesPerCustomer[i]} cookies`;
     hoursOfOperation1.append(list);
+    totalCookies1.innerHTML = `Total: ${paris.totalCookies1} cookies`;
 
 }
 
@@ -171,62 +184,40 @@ for(let i = 0; i < paris.hoursOfOperation1.length; i++){
 const lima = {
     min: 2, //minmum customer
     max: 16, //maximum customer
-    hoursOfOperation: ["6am", "7am", "8am", "9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm", "6pm", "7pm"],
+    hoursOfOperation: ["6:00 am", "7:00 am", "8:00 am", "9:00 am", "10:00 am", "11:00 am", "12:00 pm", "1:00 pm", "2:00 pm", "3:00 pm", "4:00 pm", "5:00 pm", "6:00 pm", "7:00 pm"],
     average: 4.6, //average cookie per customer
     customersPerHour: function () {
         return getRandom(this.max, this.min);
     },
-    totalCookies: 0,
     cookiesPerCustomer: [],
     getCookies: function () {
+        let totalCookiesSold = 0;
         for (let i = 0; i < this.hoursOfOperation.length; i++) {
-            console.log(lima.hoursOfOperation[i], Math.ceil(this.average *this.customersPerHour()));
-            //console.log(Math.ceil(this.average *this.customersPerHour()));
-            this.cookiesPerCustomer.push(Math.ceil(this.average *this.customersPerHour())); 
-            
+            const cookiesSold = Math.ceil(this.average * this.customersPerHour());
+            console.log(lima.hoursOfOperation[i], cookiesSold);
+            this.cookiesPerCustomer.push(cookiesSold);
+            totalCookiesSold += cookiesSold;
         }
+        this.totalCookies = totalCookiesSold;
         return this.cookiesPerCustomer;
-
-
     }
-
 }
 lima.getCookies();
+
 let hoursOfOperation = document.querySelector(".limaOutput");
 let totalCookies = document.querySelector(".totalCookies");
 
-for(let i = 0; i < lima.hoursOfOperation.length; i++){
+for (let i = 0; i < lima.hoursOfOperation.length; i++) {
     let list = document.createElement("li");
-   list.innerHTML = `${lima.hoursOfOperation[i]}: ${lima.cookiesPerCustomer[i]} cookies`;
+    list.innerHTML = `${lima.hoursOfOperation[i]}: ${lima.cookiesPerCustomer[i]} cookies`;
     hoursOfOperation.append(list);
-    totalCookies.innerHTML = `Total Cookies: ${lima.totalCookies}`;
+    totalCookies.innerHTML = `Total: ${lima.totalCookies} cookies`;
 }
-//Total cookies
 
 
 
 
 
 
-// for(let i = 0; i < lima.hoursOfOperation.length; i++){
-//     console.log(lima.hoursOfOperation[i]);
-//     console.log(lima.cookiesPerCustomer[i]);
-// }
-// console.log(lima.hoursOfOperation);
-// console.log(lima.getCookies());
 
-
-
-//console.log(lima.getCustomers());
-
-
-
-
-
-// find number of cookies * avg cookies to number of ppl
-
-/*function getTotalcookie(average){
-    average * getCustomers();
-}
-getTotalcookie();*/
 
