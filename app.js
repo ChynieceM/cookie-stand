@@ -216,7 +216,17 @@ for (let i = 0; i < lima.hoursOfOperation.length; i++) {
 
 
 
+//DAY 2 
 
+/*Replace all of your object literals for the salmon cookie stand with a single constructor function that, when called with the ‘new’ keyword, it creates a new instance.
+
+Replace the lists of your data for each store and build a single table of data instead. It should look similar to the following:
+
+Display each stores data in a table format similar to what is below. Break each column by the hour and complete each row with a “Daily Location Total”.*/
+
+/*Each cookie stand location should have a separate render() method that creates and appends its row to the table
+The header row and footer row are each created in their own stand-alone function
+NOTE: Please use a header cell for both the header row ( containing store hours ), and the footer row ( hourly and grand totals across all stores ).*/
 
 
 
