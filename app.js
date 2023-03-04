@@ -260,7 +260,7 @@ var cookieStandLocation = function (min, max, average, location) {
 
         for (let i = 0; i < this.hoursOfOperation.length; i++) {
             let tableTd = document.createElement("td");
-          tableTd.innerHTML = this.cookiesPerCustomer[i];
+            tableTd.innerHTML = this.cookiesPerCustomer[i];
             console.log(this.cookiesPerCustomer);
             tableTr.append(tableTd);
         }
@@ -269,7 +269,7 @@ var cookieStandLocation = function (min, max, average, location) {
         totalTd.innerHTML = this.totalDailyCookies();
         tableTr.append(totalTd);
 
-       document.getElementById("body").append(tableTr);
+        document.getElementById("body").append(tableTr);
         return stand.render;
     };
     return stand;
@@ -313,25 +313,26 @@ lima.render();
 
 getHourlyTotal = function () { //loop throguh the sales per hour add them up and render, loop throuhg hr of opp and add up cookies sold at that hr
     let totalHourlyLoc = document.createElement("tfoot");
+
     let hoursArray = []
     for (let i = 0; i < hours.length; i++) {
         cookiesSoldHr = seattle.cookiesPerCustomer[i] + tokyo.cookiesPerCustomer[i] + dubai.cookiesPerCustomer[i] + paris.cookiesPerCustomer[i] + lima.cookiesPerCustomer[i]
         hoursArray.push(cookiesSoldHr)
         let tfoot = document.createElement("td");
         tfoot.innerHTML = cookiesSoldHr
-         totalHourlyLoc.append(tfoot);
-    
+        totalHourlyLoc.append(tfoot);
+
     }
 
 
-    
-     //tableTr.append(totalHourlyLoc);
-     document.getElementById("body").append(totalHourlyLoc);
+
+    //tableTr.append(totalHourlyLoc);
+    document.getElementById("body").append(totalHourlyLoc);
 
     console.log(cookiesSoldHr)
     return hoursArray;
 
-   
+
 };
 
 getHourlyTotal();
