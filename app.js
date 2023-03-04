@@ -210,12 +210,14 @@ for (let i = 0; i < lima.hoursOfOperation.length; i++) {
     hoursOfOperation.append(list);
     totalCookies.innerHTML = `Total: ${lima.totalCookies} cookies`;
 }*/
+let hours = ["6:00 am", "7:00 am", "8:00 am", "9:00 am", "10:00 am", "11:00 am", "12:00 pm", "1:00 pm", "2:00 pm", "3:00 pm", "4:00 pm", "5:00 pm", "6:00 pm", "7:00 pm"];
+
 function getRandom(min, max) { //generates a random number
 
     return Math.ceil(Math.random() * (max - min) + min);// math.random generates number b/w 0 and 1
 
-}
-let hours = ["6:00 am", "7:00 am", "8:00 am", "9:00 am", "10:00 am", "11:00 am", "12:00 pm", "1:00 pm", "2:00 pm", "3:00 pm", "4:00 pm", "5:00 pm", "6:00 pm", "7:00 pm"];
+};
+
 var cookieStandLocation = function (min, max, average, location) {
     stand = {};
     stand.min = min;
@@ -231,13 +233,13 @@ var cookieStandLocation = function (min, max, average, location) {
 
 
 
-    stand.totalDailyCookies = function(){
+    stand.totalDailyCookies = function () {
         let totalCookiesSold = 0;
-        for (let i = 0; i < this.hoursOfOperation.length; i++){
-        totalCookiesSold += this.getCookies()[i];
+        for (let i = 0; i < this.hoursOfOperation.length; i++) {
+            totalCookiesSold += this.getCookies()[i];
+        }
+        return totalCookiesSold;
     }
-    return totalCookiesSold;
-}
     stand.getCookies = function () {
         for (let i = 0; i < this.hoursOfOperation.length; i++) {
             const cookiesSold = Math.ceil(this.average * this.getCustomers());
@@ -258,12 +260,16 @@ var cookieStandLocation = function (min, max, average, location) {
 
         for (let i = 0; i < this.hoursOfOperation.length; i++) {
             let tableTd = document.createElement("td");
-            tableTd.innerHTML = this.cookiesPerCustomer[i];
+          tableTd.innerHTML = this.cookiesPerCustomer[i];
             console.log(this.cookiesPerCustomer);
             tableTr.append(tableTd);
         }
-        
-        document.getElementById("body").append(tableTr);
+
+        let totalTd = document.createElement("Td");
+        totalTd.innerHTML = this.totalDailyCookies();
+        tableTr.append(totalTd);
+
+       document.getElementById("body").append(tableTr);
         return stand.render;
     };
     return stand;
@@ -274,20 +280,27 @@ const seattle = new cookieStandLocation(23, 65, 6.3, "Seattle", []);
 seattle.getCookies();
 seattle.getCustomers();
 seattle.render();
-seattle.totalDailyCookies();
+seattle.cookiesPerCustomer[0];
 
 const tokyo = new cookieStandLocation(3, 24, 1.2, "Tokyo", []);
 tokyo.getCookies();
 tokyo.getCustomers();
 tokyo.render();
+tokyo.cookiesPerCustomer[0];
 
 
-const dubai = new cookieStandLocation(11, 38, 3.7, "Dubai", []);  
+const dubai = new cookieStandLocation(11, 38, 3.7, "Dubai", []);
 dubai.getCookies();
 dubai.getCustomers();
 dubai.render();
- 
-const paris = new cookieStandLocation(20, 38, 2.3, "Paris", []); 
+dubai.cookiesPerCustomer[0];
+
+//let cookiesSoldat6am = seattle.cookiesPerCustomer[0] + tokyo.cookiesPerCustomer[0] + dubai.cookiesPerCustomer[0]
+//let cookiesSoldat7am = seattle.cookiesPerCustomer[1] + tokyo.cookiesPerCustomer[1]
+
+
+
+const paris = new cookieStandLocation(20, 38, 2.3, "Paris", []);
 paris.getCookies();
 paris.getCustomers();
 paris.render();
@@ -297,8 +310,31 @@ lima.getCookies();
 lima.getCustomers();
 lima.render();
 
-//let totalCookies = document.querySelector(".totalCookies");
-//totalCookies.innerHTML = `${lima.totalCookies}`;
+
+getHourlyTotal = function () { //loop throguh the sales per hour add them up and render, loop throuhg hr of opp and add up cookies sold at that hr
+    let totalHourlyLoc = document.createElement("tfoot");
+    let hoursArray = []
+    for (let i = 0; i < hours.length; i++) {
+        cookiesSoldHr = seattle.cookiesPerCustomer[i] + tokyo.cookiesPerCustomer[i] + dubai.cookiesPerCustomer[i] + paris.cookiesPerCustomer[i] + lima.cookiesPerCustomer[i]
+        hoursArray.push(cookiesSoldHr)
+        let tfoot = document.createElement("td");
+        tfoot.innerHTML = cookiesSoldHr
+         totalHourlyLoc.append(tfoot);
+    
+    }
+
+
+    
+     //tableTr.append(totalHourlyLoc);
+     document.getElementById("body").append(totalHourlyLoc);
+
+    console.log(cookiesSoldHr)
+    return hoursArray;
+
+   
+};
+
+getHourlyTotal();
 
 
 
