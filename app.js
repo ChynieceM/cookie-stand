@@ -1,4 +1,4 @@
-let hours = ["6:00 am", "7:00 am", "8:00 am", "9:00 am", "10:00 am", "11:00 am", "12:00 pm", "1:00 pm", "2:00 pm", "3:00 pm", "4:00 pm", "5:00 pm", "6:00 pm", "7:00 pm"];
+let hours = [" 6am ", " 7am ", " 8am ", " 9am ", " 10am ", " 11am ", " 12pm ", " 1pm ", " 2pm ", " 3pm ", " 4pm ", " 5pm ", " 6pm ", " 7pm "];
 
 function getTableHeader(){
     let headersTr = document.createElement("tr");
@@ -79,11 +79,11 @@ var cookieStandLocation = function (min, max, average, location) {
 }
 
 
-const seattleStand = cookieStandLocation(23, 65, 6.3, "Seattle", []);
-seattleStand.getCookies();
-seattleStand.getCustomers();
-seattleStand.render();
-seattleStand.cookiesPerCustomer[0];
+const seattle = cookieStandLocation(23, 65, 6.3, "Seattle", []);
+seattle.getCookies();
+seattle.getCustomers();
+seattle.render();
+seattle.cookiesPerCustomer[0];
 
 const tokyo = new cookieStandLocation(3, 24, 1.2, "Tokyo", []);
 tokyo.getCookies();
@@ -119,7 +119,7 @@ getHourlyTotal = function () { //loops through hr of opp and add up cookies sold
     totalHourlyLoc.insertBefore(totalHourlySales, totalHourlyLoc.firstChild);
 
     for (let i = 0; i < hours.length; i++) {
-        let cookiesSoldHr = seattleStand.cookiesPerCustomer[i] + lima.cookiesPerCustomer[i] + dubai.cookiesPerCustomer[i] + paris.cookiesPerCustomer[i] + tokyo.cookiesPerCustomer[i]
+        let cookiesSoldHr = seattle.cookiesPerCustomer[i] + lima.cookiesPerCustomer[i] + dubai.cookiesPerCustomer[i] + paris.cookiesPerCustomer[i] + tokyo.cookiesPerCustomer[i]
         hoursArray.push(cookiesSoldHr);
         let lasttr = document.createElement("td");
         lasttr.innerHTML = cookiesSoldHr;
