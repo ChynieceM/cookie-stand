@@ -1,3 +1,34 @@
+body {
+    
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-image: url("chinook.jpg");
+    background-size: 30%;
+    
+    
+}
+main {
+    border: 2px solid brown;
+    row-gap: 20px;
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: #E89248;
+    border-radius: 10px;
+}
+header {
+    column-gap: 20px;
+    border-radius: 10px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border: 2px solid brown;
+    padding: 20px;
+    text-align: center;
+    background: #E89248;
+    color: white;
+    font-size: 30px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
 ul {
     display: flex;
     width: 100%;
@@ -13,19 +44,6 @@ li {
     display: block;
 }
 
-header {
-    column-gap: 20px;
-    border-radius: 10px;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    border: 2px solid brown;
-    padding: 20px;
-    text-align: center;
-    background: #E89248;
-    color: white;
-    font-size: 30px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
-}
 
 h1 {
     border: 2px solid brown;
@@ -45,27 +63,6 @@ section {
 
 }
 
-body {
-    
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    background-image: url("chinook.jpg");
-    background-size: 30%;
-    
-   
-}
-
-main {
-    border: 2px solid brown;
-    row-gap: 20px;
-    display: flex;
-    width: 100%;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    background-color: #E89248;
-    border-radius: 10px;
-
-}
-
 .para {
     border-radius: 15px;
     font-size: 150%;
@@ -76,25 +73,24 @@ main {
     padding: 10px;
     border: 10px solid transparent;
     border-image: url("fish.jpg") 40 repeat;
-    
-
-
 }
-div{
+
+div {
     display: flex;
-    align-items: center ;
+    align-items: center;
     background-color: #E89248;
 }
 
 
-.shopimages{
+.shopimages {
     display: flex;
-justify-content: space-around;
-margin-top: 20px;
-border-radius: 10px;
-border: 2px solid brown;
+    justify-content: space-around;
+    margin-top: 20px;
+    border-radius: 10px;
+    border: 2px solid brown;
 
 }
+
 h3 {
     column-gap: 20px;
     border-radius: 10px;
@@ -104,7 +100,8 @@ h3 {
     text-align: center;
     background: #E89248;
 }
-.container{
+
+.container {
     display: flex;
     flex-direction: row;
     text-align: center;
@@ -115,24 +112,29 @@ h3 {
     padding: 20px;
     background: #E89248;
 }
-.container:nth-child(2){
+
+.container:nth-child(2) {
     order: 1;
-    background: #E89248; 
+    background: #E89248;
 }
-.container:nth-child(3){
-    order:1;
+
+.container:nth-child(3) {
+    order: 1;
 }
-h4{
+
+h4 {
     border-radius: 10px;
     margin-bottom: 20px;
     border: 2px solid brown;
     padding: 20px;
     background: #851e52;
 }
+
 /*sales page*/
-.sales{
+.sales {
     display: block;
 }
+
 h2 {
     column-gap: 20px;
     border-radius: 10px;
@@ -179,4 +181,8 @@ a:visited {
     display: inline-block;
     border-radius: 10px;
     box-shadow: #0f0c18;
+}
+
+a:hover {
+    color: #ff91a4;
 }
