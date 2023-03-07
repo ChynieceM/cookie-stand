@@ -6,7 +6,108 @@ ul {
     justify-content: space-evenly;
 
 }
+
 li {
     list-style: none;
     gap: 1rem;
+    display: block;
 }
+
+header {
+    column-gap: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 1px solid brown;
+    padding: 20px;
+    text-align: center;
+    background: #ff91a4;
+    color: white;
+    font-size: 30px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+h1 {
+    color: conic-gradient(#553c9a, #ee4b2b, #00c2cb, #553c9a);
+    font-family: 'Alfa Slab One';
+    background-color: #ff91a4;
+    width: 50%;
+    height: auto;
+    border-radius: 10px;
+}
+
+section {
+    background-color: rgb(152, 188, 234);
+    color: white;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+
+}
+
+body {
+
+    background-image: url("https://codefellows.github.io/code-201-guide/curriculum/class-06/lab/assets/salmon.png");
+
+}
+
+main {
+
+    row-gap: 20px;
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgb(152, 188, 234);
+    border-radius: 10px;
+
+}
+
+.para {
+    border-radius: 15px;
+    font-size: 150%;
+}
+
+h2 {
+    column-gap: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 1px solid brown;
+    padding: 20px;
+    text-align: center;
+    background: #ff91a4;
+}
+
+table {
+    border: 1px solid;
+    text-align: center;
+    background-color: #ff91a4;
+    align-items: center;
+    width: 100%;
+    overflow-x:auto
+}
+th, td {
+    border: 1px solid;
+  }
+  footer{
+    column-gap: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    border: 1px solid brown;
+    padding: 20px;
+    text-align: center;
+    background: #ff91a4;
+    
+  }
+
+  a:link, a:visited {
+    background-color: green;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 10px;
+    box-shadow: #553c9a;
+  }
+ 
