@@ -50,6 +50,7 @@ body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background-image: url("chinook.jpg");
     background-size: 30%;
+    
    
 }
 
@@ -126,7 +127,7 @@ h4{
     margin-bottom: 20px;
     border: 2px solid brown;
     padding: 20px;
-    background: lightblue;
+    background: #851e52;
 }
 /*sales page*/
 .sales{
@@ -170,12 +171,12 @@ footer {
 
 a:link,
 a:visited {
-    background-color: green;
+    background-color: #851e52;
     color: white;
     padding: 14px 25px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     border-radius: 10px;
-    box-shadow: #553c9a;
+    box-shadow: #0f0c18;
 }
