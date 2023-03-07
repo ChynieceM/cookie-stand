@@ -16,49 +16,51 @@ li {
 header {
     column-gap: 20px;
     border-radius: 10px;
-    margin-bottom: 20px;
-    border: 1px solid brown;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border: 2px solid brown;
     padding: 20px;
     text-align: center;
-    background: #ff91a4;
+    background: #E89248;
     color: white;
     font-size: 30px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
 h1 {
-    color: conic-gradient(#553c9a, #ee4b2b, #00c2cb, #553c9a);
+    border: 2px solid brown;
     font-family: 'Alfa Slab One';
-    background-color: #ff91a4;
-    width: 50%;
+    background-color: #E89248;
+    width: 100%;
     height: auto;
     border-radius: 10px;
 }
 
 section {
-    background-color: rgb(152, 188, 234);
+    background-color: #E89248;
     color: white;
     text-align: center;
-    display: flex;
+    column-gap: 20px;
     justify-content: center;
 
 }
 
 body {
-
-    background-image: url("https://codefellows.github.io/code-201-guide/curriculum/class-06/lab/assets/salmon.png");
-
+    
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-image: url("chinook.jpg");
+    background-size: 30%;
+   
 }
 
 main {
-
+    border: 2px solid brown;
     row-gap: 20px;
     display: flex;
     width: 100%;
     flex-wrap: wrap;
-    align-items: center;
     justify-content: space-around;
-    background-color: rgb(152, 188, 234);
+    background-color: #E89248;
     border-radius: 10px;
 
 }
@@ -68,6 +70,68 @@ main {
     font-size: 150%;
 }
 
+.family {
+    border-radius: 20px;
+    padding: 10px;
+    border: 10px solid transparent;
+    border-image: url("fish.jpg") 40 repeat;
+    
+
+
+}
+div{
+    display: flex;
+    align-items: center ;
+    background-color: #E89248;
+}
+
+
+.shopimages{
+    display: flex;
+justify-content: space-around;
+margin-top: 20px;
+border-radius: 10px;
+border: 2px solid brown;
+
+}
+h3 {
+    column-gap: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 2px solid brown;
+    padding: 20px;
+    text-align: center;
+    background: #E89248;
+}
+.container{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: space-around;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 2px solid brown;
+    padding: 20px;
+    background: #E89248;
+}
+.container:nth-child(2){
+    order: 1;
+    background: #E89248; 
+}
+.container:nth-child(3){
+    order:1;
+}
+h4{
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 2px solid brown;
+    padding: 20px;
+    background: lightblue;
+}
+/*sales page*/
+.sales{
+    display: block;
+}
 h2 {
     column-gap: 20px;
     border-radius: 10px;
@@ -84,23 +148,28 @@ table {
     background-color: #ff91a4;
     align-items: center;
     width: 100%;
-    overflow-x:auto
+    overflow-x: auto
 }
-th, td {
+
+th,
+td {
     border: 1px solid;
-  }
-  footer{
+}
+
+footer {
     column-gap: 20px;
     border-radius: 10px;
     margin-top: 20px;
-    border: 1px solid brown;
+    border: 2px solid brown;
     padding: 20px;
     text-align: center;
-    background: #ff91a4;
-    
-  }
+    background: #E89248;
 
-  a:link, a:visited {
+}
+
+
+a:link,
+a:visited {
     background-color: green;
     color: white;
     padding: 14px 25px;
@@ -109,5 +178,4 @@ th, td {
     display: inline-block;
     border-radius: 10px;
     box-shadow: #553c9a;
-  }
- 
+}
