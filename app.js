@@ -10,10 +10,12 @@ function getTableHeader(){
         tableTh.innerHTML = hours[i];
         headersTr.appendChild(tableTh);
     }
+
     let totalTh = document.createElement("th")
-    totalTh.innerHTML = "";
+    totalTh.innerHTML = "Daily Totals";
     headersTr.appendChild(totalTh);
     document.getElementById("body").append(headersTr)
+
 };
 
 getTableHeader();
