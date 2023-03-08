@@ -110,8 +110,9 @@ lima.getCustomers();
 lima.render();
 
 
-getHourlyTotal = function () { //loops through hr of opp and add up cookies sold at that hr; accross all stores
 
+getHourlyTotal = function () { //loops through hr of opp and add up cookies sold at that hr; accross all stores
+    
     let totalHourlyLoc = document.createElement("tr");
     let hoursArray = [];
     
@@ -141,5 +142,20 @@ getHourlyTotal();
 
 
 
+let submit = function(e){
+    e.preventDefault()
+    let userInput = document.getElementById("location")
+    let userInputValue = userInput.value
+    console.log(userInputValue, "this is the user input")
+    let userNewLocation = cookieStandLocation(1, 10, 5, userInputValue)
+    console.log(userNewLocation, "this is the new location")
+    userNewLocation.getCookies();
+    userNewLocation.getCustomers();
+    userNewLocation.render();
+    
+    
+}
+let submitButton = document.getElementById("newLocation");
+submitButton.addEventListener("click", submit);
 
 
