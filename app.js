@@ -1,12 +1,12 @@
 let hours = [" 6am ", " 7am ", " 8am ", " 9am ", " 10am ", " 11am ", " 12pm ", " 1pm ", " 2pm ", " 3pm ", " 4pm ", " 5pm ", " 6pm ", " 7pm "];
 
-function getTableHeader(){
+function getTableHeader() {
     let headersTr = document.createElement("tr");
     let blankTd = document.createElement("td");
     headersTr.appendChild(blankTd);
-    
-    for(let i = 0; i < hours.length; i++){
-        let tableTh= document.createElement("th");
+
+    for (let i = 0; i < hours.length; i++) {
+        let tableTh = document.createElement("th");
         tableTh.innerHTML = hours[i];
         headersTr.appendChild(tableTh);
     }
@@ -56,21 +56,21 @@ var cookieStandLocation = function (min, max, average, location) {
         }
         return totalCookiesSold;
     };
-    
+
     stand.render = function () { //this function renders the table that displays information for each city 
         //row for the location data
         let tableTr = document.createElement("tr");
         let localTd = document.createElement("td");
         localTd.innerHTML = this.location;
         tableTr.append(localTd);
-        
+
         for (let i = 0; i < this.hoursOfOperation.length; i++) { //this for loop loops creates eleents in the table and pushes information through to display in the table
             let tableTd = document.createElement("td");
             tableTd.innerHTML = this.cookiesPerCustomer[i];
             console.log(this.cookiesPerCustomer);
             tableTr.append(tableTd);
         }
-        
+
         let totalTd = document.createElement("td");
         totalTd.innerHTML = this.totalDailyCookies();
         tableTr.append(totalTd);
@@ -112,10 +112,10 @@ lima.render();
 
 
 getHourlyTotal = function () { //loops through hr of opp and add up cookies sold at that hr; accross all stores
-    
-    let totalHourlyLoc = document.createElement("tr");
+
+    let totalHourlyLoc = document.createElement("tfoot");
     let hoursArray = [];
-    
+
     //insert before allows me to insert a new cell for data, in this case a totals header for the totals row. 
     let totalHourlySales = document.createElement("td")
     totalHourlySales.innerHTML = "Totals";
@@ -142,18 +142,18 @@ getHourlyTotal();
 
 
 
-let submit = function(e){
+let submit = function (e) {
     e.preventDefault()
     let userInput = document.getElementById("location")
     let userInputValue = userInput.value
-    console.log(userInputValue, "this is the user input")
-    let userNewLocation = cookieStandLocation(1, 10, 5, userInputValue)
-    console.log(userNewLocation, "this is the new location")
+    //console.log(userInputValue, "this is the user input")
+    let userNewLocation = cookieStandLocation(3, 10, 5, userInputValue)
+    //console.log(userNewLocation, "this is the new location")
     userNewLocation.getCookies();
     userNewLocation.getCustomers();
     userNewLocation.render();
-    
-    
+
+
 }
 let submitButton = document.getElementById("newLocation");
 submitButton.addEventListener("click", submit);
