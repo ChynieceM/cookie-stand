@@ -2,53 +2,54 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="sales">
-        <h2>Here's a glimpse at our hourly and daily sales across all locations</h2>
+  <div class="sales">
+    <h2>Here's a glimpse at our hourly and daily sales across all locations</h2>
 
 
 
-        <table id="body">
-            <th id="head"></th>
-            <tfoot id="foot"></tfoot>
+    <table id="body">
+      <th id="head"></th>
+      <tfoot id="foot"></tfoot>
 
-        </table>
-    </div>
+    </table>
+  </div>
 
-    <form id = "form">
-        <ul>
-          <li>
-            <label for="min">New Minimum:</label>
-            <input type="number" id="minimum" label="min" />
-          </li>
-          <li>
-            <label for="max">New Maximum:</label>
-            <input type="number" id="maximum" label="max" />
-          </li>
-          <li>
-            <label for="avg">New Average:</label>
-            <input type="number" id="avg" label="avg" />
-          </li>
-          <li>
-            <label for="location">New Location:</label>
-            <input type="text" id="location" label="location" />
-          </li>
-          <li><button id="newLocation" type="submit">Render Location</button></li>
-        </ul>
-            
-            
-          
-      </form>
+  <form id="form">
+    <fieldset>
+      <ul>
+        <li>
+          <label for="min">New Minimum:</label>
+          <input type="number" id="minimum" label="min" />
+        </li>
+        <li>
+          <label for="max">New Maximum:</label>
+          <input type="number" id="maximum" label="max" />
+        </li>
+        <li>
+          <label for="avg">New Average:</label>
+          <input type="number" id="avg" label="avg" />
+        </li>
+        <li>
+          <label for="location">New Location:</label>
+          <input type="text" id="location" label="location" />
+        </li>
+        <li><button id="newLocation" type="submit">Render Location</button></li>
+      </ul>
+    </fieldset>
 
-    <script src="app.js"></script>
+
+  </form>
+
+  <script src="app.js"></script>
 </body>
 
 </html>
